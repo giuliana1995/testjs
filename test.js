@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
  <h1>Test JS</h1>
- <select name="tags" id="tags">
- 
- </select>
-    <script src="index.js"></script>
+ <select name="tags" id="tags"></select>
   </body>
   </head>
   <body>
@@ -36,10 +32,10 @@ fetch('https://cataas.com//api/tags')
             tags.append(option)
         })
         function catImage() {
-            fetch('https://cataas.com/cat?json=true')
+            fetch(`https://cataas.com/cat?json=true`)
             
         }
-    
+        tags.addEventListener('change', catImage())
     })
 
 
