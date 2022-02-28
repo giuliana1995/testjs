@@ -32,7 +32,7 @@ fetch('https://cataas.com//api/tags')
             tags.append(option)
         })
         function catImage() {
-            fetch(`https://cataas.com/cat?json=true`)
+            fetch('https://cataas.com/cat?json=true')
             
         }
       
