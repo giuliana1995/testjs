@@ -21,10 +21,10 @@
     const tags = document.querySelector('#tags')
 fetch('https://cataas.com//api/tags')
     .then(response => response.json())
-    .then(datas => {
-        console.log(datas)
-        const array1 = datas.slice(4, 9)
-        const array2 = datas.slice(14, 19)
+    .then(data => {
+        console.log(data)
+        const array1 = data.slice(4, 9)
+        const array2 = data.slice(14, 19)
         const filter = array1.concat(array2)
         console.log(filter)
         filter.forEach(element => {
