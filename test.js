@@ -35,7 +35,7 @@ fetch('https://cataas.com//api/tags')
             fetch(`https://cataas.com/cat?json=true`)
             
         }
-        tags.addEventListener('change', catImage())
+      
     })
 
 
