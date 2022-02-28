@@ -1,47 +1,47 @@
-const store = {
-    id: 21,
-    name: 'Negozio per animali',
-    location: {
-        city: 'Roma',
-        address: 'Via boh 10',
-        cap: '00100'
-    },
-    availability: {
-        monday: {
-            start: '2021-06-29T09:00:00',
-            end: '2021-06-29T12:00:00'
-        },
-        tuesday: {
-            start: '2021-06-29T10:00:00',
-            end: '2021-06-29T15:00:00'
-        },
-        wednesday: null,
-        thursday: null,
-        friday: {
-            start: '2021-06-29T09:00:00',
-            end: '2021-06-29T18:00:00'
-        },
-        saturday: null,
-        sunday: {
-            start: '2021-06-29T09:00:00',
-            end: '2021-06-29T12:00:00'
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+ <h1>Test JS</h1>
+ <select name="tags" id="tags">
+ 
+ </select>
+    <script src="index.js"></script>
+  </body>
+  </head>
+  <body>
+
+
+  <script>
+
+    const tags = document.querySelector('#tags')
+fetch('https://cataas.com//api/tags')
+    .then(response => response.json())
+    .then(datas => {
+        console.log(datas)
+        const arr49 = datas.slice(4, 9)
+        const arr1419 = datas.slice(14, 19)
+        const filter = arr49.concat(arr1419)
+        console.log(filter)
+        filter.forEach(element => {
+            let option = (document.createElement('option'))
+            option.value = element
+            option.innerText = element
+            option.setAttribute('id', 'cats')
+            console.log(option)
+            tags.append(option)
+        })
+        function catImage() {
+            fetch(`https://cataas.com/cat?json=true`)
+            
         }
-    }
-};
+        tags.addEventListener('change', catImage())
+    })
 
-function days() {
-    for (let day in store.availability) {
-        if (store.availability[day]) {
 
-            store.availability[day].start = new Date(store.availability[day].start).getHours();
-            store.availability[day].end = new Date(store.availability[day].end).getHours();
-        } else {
-            delete store.availability[day];
-        }
-    }
-}
+  </script>
 
-days();
-console.log(store);
-
-const person1 = {name: andrea};
+</html>
